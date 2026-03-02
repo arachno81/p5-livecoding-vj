@@ -8,12 +8,14 @@ export function createSketch(s){
 	const PIPELINE = [
 		stage('BG', () => true, ({ s, sec, dt }) => {
 			s.background(0);
+		}),
+		stage('HUD', () => true, ({ s, sec, dt }) => {
 			s.fill(255);
 			s.textSize(24);
 			s.text('TEST', 40, 40);
       s.text(`sec: ${sec.toFixed(2)}`, 40, 80);
       s.text(`dt: ${dt.toFixed(3)}`, 40, 120);
-		}),
+		})
 	];
 	
 
